@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Player{
+public class Player
+{
     public Dictionary<string, int> Equipment = new Dictionary<string, int>();
 
     public string name { get; set; }
@@ -11,7 +12,8 @@ public class Player{
     public string weapon_2 { get; set; }
     public string movement { get; set; }
 
-    public Player(string name){
+    public Player(string name)
+    {
         this.name = name;
         Equipment.Add("pistol", 1);
         Equipment.Add("shotgun", 0);
