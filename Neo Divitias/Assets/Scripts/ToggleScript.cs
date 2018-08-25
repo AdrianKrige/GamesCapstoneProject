@@ -10,7 +10,6 @@ public class ToggleScript : MonoBehaviour {
     private void Start(){
         TextMeshProUGUI mText = gameObject.GetComponentsInChildren<TextMeshProUGUI>()[0];
         string item_name = gameObject.name;
-        Debug.Log(item_name.ToLower());
 
         mText.text = string.Format("{0}", GameState.player_one.Equipment[item_name.ToLower()]);
         toggle = GetComponent<UnityEngine.UI.Toggle>();

@@ -38,6 +38,17 @@ public class MainMenu : MonoBehaviour{
         Application.Quit();
     }
 
+    public void UpgradeItem(string item){
+        // This is vom, change it
+        //if (player == 1){
+            Debug.Log("Upgrade item");
+            Debug.Log(item);
+            Debug.Log(GameState.player_one.Equipment[item.ToLower()]);
+            GameState.player_one.Equipment[item.ToLower()]++;
+            Debug.Log(GameState.player_one.Equipment[item.ToLower()]);
+       // }
+    }
+
     public void ReturnToMain(){
         GameState.SetPrefs();
         SceneManager.LoadScene("Main");
