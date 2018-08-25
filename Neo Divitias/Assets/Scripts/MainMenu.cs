@@ -5,31 +5,41 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour{
 
-	public void LoadShop(){
-        //PlayerPrefs.SetInt("next_level", 1);
+    public void NewGame(){
+        GameState.game_level = 1;
+        GameState.player_one = new Player("1");
+        GameState.player_two = new Player("2");
+        GameState.SetPrefs();
 
-		SceneManager.LoadScene ("Shop");
-	}
-
-    public void StartNextLevel(){
-        // Get level from static script or persistent data and load the next level
-
-        //int next_level = PlayerPrefs.GetInt("next_level");
-        int next_level = Game.current.next_level;
-        SceneManager.LoadScene(string.Format("Level {0}", next_level));
+        LoadShop();
     }
 
+    public void StartNextLevel(){
+        GameState.SetPrefs();
+        SceneManager.LoadScene(string.Format("Level {0}", GameState.game_level));
+    }
+
+    public void LoadShop()
+    {
+        GameState.GetPrefs();
+        SceneManager.LoadScene("Shop");
+    }
+    
+    // This will be done by Matt
     public void FinishLevel(){
-        Game.current.IncrLevel();
+        GameState.game_level++;
+        GameState.SetPrefs();
         LoadShop();
     }
 
     public void QuitGame(){
+        GameState.SetPrefs();
         Debug.Log("Quitting!");
         Application.Quit();
     }
 
     public void ReturnToMain(){
+        GameState.SetPrefs();
         SceneManager.LoadScene("Main");
     }
 }

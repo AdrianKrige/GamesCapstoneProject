@@ -1,19 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
- 
-[System.Serializable]
+using System.Collections.Generic;
+
 public class Player{
-    public string name;
-    public int pistol = 1;
-    public int shotgun = 0;
-    public int smg = 0;
-    public int rifle = 0;
-    public int armour = 2;
-    public int accuracy = 0;
-    public int dash = 0;
-    public int jump = 3;
+    public Dictionary<string, int> Equipment = new Dictionary<string, int>();
+
+    public string name { get; set; }
+
+    public string weapon_1 { get; set; }
+    public string weapon_2 { get; set; }
+    public string movement { get; set; }
 
     public Player(string name){
         this.name = name;
+        Equipment.Add("pistol", 1);
+        Equipment.Add("shotgun", 0);
+        Equipment.Add("smg", 0);
+        Equipment.Add("rifle", 0);
+        Equipment.Add("jump", 3);
+        Equipment.Add("dash", 0);
+        Equipment.Add("armour", 0);
+        Equipment.Add("accuracy", 0);
+
+        this.weapon_1 = string.Format("{0}_Pistol", name);
     }
 }
