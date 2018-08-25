@@ -3,21 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour {
+public class MainMenu : MonoBehaviour{
 
-    //PlayerPrefs.SetFloat("currentlevel", 1);
-    
+	public void LoadShop(){
+        //PlayerPrefs.SetInt("next_level", 1);
 
-	public void PlayGame(){
-        PlayerPrefs.SetInt("next_level", 1);
 		SceneManager.LoadScene ("Shop");
 	}
 
-    public void StartNextLevel()
-    {
+    public void StartNextLevel(){
         // Get level from static script or persistent data and load the next level
-        int next_level = PlayerPrefs.GetInt("next_level");
+
+        //int next_level = PlayerPrefs.GetInt("next_level");
+        int next_level = Game.current.next_level;
         SceneManager.LoadScene(string.Format("Level {0}", next_level));
+    }
+
+    public void FinishLevel(){
+        Game.current.IncrLevel();
+        LoadShop();
     }
 
     public void QuitGame(){
@@ -25,8 +29,7 @@ public class MainMenu : MonoBehaviour {
         Application.Quit();
     }
 
-    public void ReturnToMain()
-    {
+    public void ReturnToMain(){
         SceneManager.LoadScene("Main");
     }
 }
