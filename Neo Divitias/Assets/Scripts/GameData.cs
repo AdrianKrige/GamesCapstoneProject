@@ -7,6 +7,11 @@ public static class GameData {
     public static void IncrLevel(){
         Level++;
     }
+
+    public static int Level2;
+    public static void setLevel(int l){
+        Level2 = l;
+    }
 }
 
 public static class PlayerOne {
