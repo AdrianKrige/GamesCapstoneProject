@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+
 
 public class ToggleScript : MonoBehaviour {
 
@@ -9,9 +11,16 @@ public class ToggleScript : MonoBehaviour {
 
     private void Start(){
         TextMeshProUGUI mText = gameObject.GetComponentsInChildren<TextMeshProUGUI>()[0];
+        Text cost = gameObject.GetComponentsInChildren<Text>()[0];
+
         string item_name = gameObject.name;
 
-        mText.text = string.Format("{0}", GameState.player_one.Equipment[item_name.ToLower()]);
+        if (gameObject.layer == 8){
+            int current_level = GameState.player_one.Equipment[item_name.ToLower()];
+            mText.text = string.Format("{0}", current_level);
+            cost.text = string.Format("$ {0}", PlayerPrefs.GetInt(string.Format("{0}_{1}", item_name.ToLower(), current_level + 1)));
+        }
+
         toggle = GetComponent<UnityEngine.UI.Toggle>();
         toggle.onValueChanged.AddListener(OnToggleValueChanged);
     }

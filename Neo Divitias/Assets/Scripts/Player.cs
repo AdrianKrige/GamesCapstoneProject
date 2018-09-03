@@ -19,10 +19,11 @@ public class Player
         Equipment.Add("shotgun", 0);
         Equipment.Add("smg", 0);
         Equipment.Add("rifle", 0);
-        Equipment.Add("jump", 3);
+        Equipment.Add("jump", 0);
         Equipment.Add("dash", 0);
         Equipment.Add("armour", 0);
         Equipment.Add("accuracy", 0);
+        Equipment.Add("money", 150);
 
         this.weapon_1 = string.Format("{0}_Pistol", name);
     }
