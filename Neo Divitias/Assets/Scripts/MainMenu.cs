@@ -49,16 +49,6 @@ public class MainMenu : MonoBehaviour{
         Application.Quit();
     }
 
-    public void UpgradeItem(string item){
-        // This is vom, change it
-        //if (player == 1){
-        if (GameState.player_one.Equipment["money"] > 500){
-            GameState.player_one.Equipment[item.ToLower()]++;
-        }
-            
-       // }
-    }
-
     public void ReturnToMain(){
         // This is a bit hacky but it allows us to go back to main menu from settings and controls before a game has been started.
         // Maybe fix if we have extra time at the end

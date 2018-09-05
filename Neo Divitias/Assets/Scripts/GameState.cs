@@ -36,8 +36,8 @@ public static class GameState{
         PlayerPrefs.SetInt("jump_3", 250);
 
         PlayerPrefs.SetInt("armour_1", 50);
-        PlayerPrefs.SetInt("armour_2", 200);
-        PlayerPrefs.SetInt("armour_3", 450);
+        PlayerPrefs.SetInt("armour_2", 100);
+        PlayerPrefs.SetInt("armour_3", 140);
 
         PlayerPrefs.SetInt("accuracy_1", 150);
         PlayerPrefs.SetInt("accuracy_2", 300);
@@ -49,6 +49,7 @@ public static class GameState{
         game_level = PlayerPrefs.GetInt("game_level");
 
         player_one.name = PlayerPrefs.GetString("1_name");
+        player_one.money = PlayerPrefs.GetInt("1_money");
         player_one.Equipment["pistol"] = PlayerPrefs.GetInt("1_pistol");
         player_one.Equipment["shotgun"] = PlayerPrefs.GetInt("1_shotgun");
         player_one.Equipment["smg"] = PlayerPrefs.GetInt("1_smg");
@@ -57,9 +58,9 @@ public static class GameState{
         player_one.Equipment["dash"] = PlayerPrefs.GetInt("1_dash");
         player_one.Equipment["armour"] = PlayerPrefs.GetInt("1_armour");
         player_one.Equipment["accuracy"] = PlayerPrefs.GetInt("1_accuracy");
-        player_one.Equipment["money"] = PlayerPrefs.GetInt("1_money");
 
         player_two.name = PlayerPrefs.GetString("2_name");
+        player_two.money = PlayerPrefs.GetInt("2_money");
         player_two.Equipment["pistol"] = PlayerPrefs.GetInt("2_pistol");
         player_two.Equipment["shotgun"] = PlayerPrefs.GetInt("2_shotgun");
         player_two.Equipment["smg"] = PlayerPrefs.GetInt("2_smg");
@@ -68,7 +69,6 @@ public static class GameState{
         player_two.Equipment["dash"] = PlayerPrefs.GetInt("2_dash");
         player_two.Equipment["armour"] = PlayerPrefs.GetInt("2_armour");
         player_two.Equipment["accuracy"] = PlayerPrefs.GetInt("2_accuracy");
-        player_two.Equipment["money"] = PlayerPrefs.GetInt("2_money");
     }
 
     // Set player prefs
@@ -76,6 +76,7 @@ public static class GameState{
         PlayerPrefs.SetInt("game_level", game_level);
 
         PlayerPrefs.SetString("1_name", player_one.name);
+        PlayerPrefs.SetInt("1_money", player_one.money);
         PlayerPrefs.SetInt("1_pistol", player_one.Equipment["pistol"]);
         PlayerPrefs.SetInt("1_shotgun", player_one.Equipment["shotgun"]);
         PlayerPrefs.SetInt("1_smg", player_one.Equipment["smg"]);
@@ -84,9 +85,9 @@ public static class GameState{
         PlayerPrefs.SetInt("1_dash", player_one.Equipment["dash"]);
         PlayerPrefs.SetInt("1_armour", player_one.Equipment["armour"]);
         PlayerPrefs.SetInt("1_accuracy", player_one.Equipment["accuracy"]);
-        PlayerPrefs.SetInt("1_money", player_one.Equipment["money"]);
 
         PlayerPrefs.SetString("2_name", player_two.name);
+        PlayerPrefs.SetInt("2_money", player_two.money);
         PlayerPrefs.SetInt("2_pistol", player_two.Equipment["pistol"]);
         PlayerPrefs.SetInt("2_shotgun", player_two.Equipment["shotgun"]);
         PlayerPrefs.SetInt("2_smg", player_two.Equipment["smg"]);
