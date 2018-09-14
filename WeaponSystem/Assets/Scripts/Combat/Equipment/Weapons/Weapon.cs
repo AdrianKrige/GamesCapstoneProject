@@ -47,11 +47,9 @@ public abstract class Weapon : Equipment
                         }
                     }
 
+					Instantiate(impactFx, target.transform);
 				}
-
-                Instantiate(impactFx, target.transform);
-            }
-            else
+			} else
 			{
 				// spawn particle effect at end of range
 				Instantiate(impactFx, playerCam.transform.position + (playerCam.transform.forward * range[level-1]), Quaternion.identity);
