@@ -38,11 +38,14 @@ public abstract class Weapon : Equipment
 
 				if (target != null)
 				{
-					target.damage(damage[level-1]);
-					if (hit.rigidbody != null)
-					{
-						hit.rigidbody.AddForce(-hit.normal * impactForce);
-					}
+                    if (target.gameObject.tag != "player" || GameState.game_level == 4 )
+                    {
+                        target.damage(damage[level - 1]);
+                        if (hit.rigidbody != null)
+                        {
+                            hit.rigidbody.AddForce(-hit.normal * impactForce);
+                        }
+                    }
 
 					Instantiate(impactFx, target.transform);
 				}
