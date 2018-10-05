@@ -444,11 +444,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28fab8e26c19764fb356e18f493c666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolSpeed: 1
+  patrolSpeed: 2
   swarmSpeed: 5
   damageDone: 1
   damageCooldown: 2
   health: 1
+  deathAnimation: {fileID: 1768562405605382, guid: 58437e049be764e4fa87007545815beb,
+    type: 2}
   swarm: {fileID: 0}
 --- !u!135 &135108224260848902
 SphereCollider:
