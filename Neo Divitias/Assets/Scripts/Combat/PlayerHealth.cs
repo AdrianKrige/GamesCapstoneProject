@@ -12,15 +12,15 @@ public class PlayerHealth : DamageableObject
     public void Update()
     {
         currentHealth = Mathf.Min(currentHealth + (int)(regenPerSecond * Time.deltaTime), maxHealth);
-        healthbar.value = currentHealth / maxHealth;
+        healthbar.value = (float)currentHealth / (float)maxHealth;
     }
 
     public override void damage(int damage)
     {
         Debug.Log(currentHealth);
         currentHealth -= damage;
-        Debug.Log("Player took: " + damage + " damage!");
-        Debug.Log("Player has: " + currentHealth / maxHealth + " health");
+        Debug.Log(currentHealth);
+        Debug.Log((float)currentHealth / (float)maxHealth);
     }
 
     public void heal(int amount)
