@@ -1332,6 +1332,16 @@ Prefab:
       propertyPath: regenPerSecond
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114005679952004268, guid: 468c7ccdb046c304987053a54307d612,
+        type: 2}
+      propertyPath: currentHealth
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114005679952004268, guid: 468c7ccdb046c304987053a54307d612,
+        type: 2}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 468c7ccdb046c304987053a54307d612, type: 2}
   m_IsPrefabParent: 0
