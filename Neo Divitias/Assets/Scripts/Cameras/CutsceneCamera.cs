@@ -55,5 +55,11 @@ public class CutsceneCamera : MonoBehaviour {
 
         // Move towards goal position
         transform.position = Vector3.MoveTowards(transform.position, positions[currentTarget].position, moveDist);
-	}
+
+        // Skip cutscene
+        if (Input.GetKeyUp(KeyCode.O))
+        {
+            SceneManager.LoadScene(string.Format("Level {0}", GameState.game_level));
+        }
+    }
 }
