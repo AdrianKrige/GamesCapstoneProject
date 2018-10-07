@@ -81,7 +81,7 @@ public class ToggleScript : MonoBehaviour {
 
     public void Refresh(){
         TextMeshProUGUI mText = gameObject.GetComponentsInChildren<TextMeshProUGUI>()[0];
-        TextMeshProUGUI cash_left = transform.parent.parent.GetComponentsInChildren<TextMeshProUGUI>()[8];
+        TextMeshProUGUI cash_left = transform.parent.parent.GetComponentsInChildren<TextMeshProUGUI>()[7];
         Text cost = gameObject.GetComponentsInChildren<Text>()[0];
         Button upgrade = gameObject.GetComponentsInChildren<Button>()[0];
 
@@ -116,11 +116,15 @@ public class ToggleScript : MonoBehaviour {
         else{
             cost.text = string.Format("MAX");
             upgrade.interactable = false;
+            // Was a bug where if item became too expensive or max, it would become unclickable. However this would also mean you can select more things on controller.
+            // In this case, just move the selection to the actual toggle
+            toggle.Select();
         }
         
         // Can't click if cant afford
         if (!affordable){
             upgrade.interactable = false;
+            toggle.Select();
         }
 
         mText.text = string.Format("{0}", current_level);
