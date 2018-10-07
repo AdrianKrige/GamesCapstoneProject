@@ -369,7 +369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -328, y: -28}
+  m_AnchoredPosition: {x: -300, y: -28}
   m_SizeDelta: {x: 261.1, y: 49.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255836516
@@ -778,7 +778,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -328, y: 34}
+  m_AnchoredPosition: {x: -300, y: 34}
   m_SizeDelta: {x: 261.1, y: 49.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &408070820
@@ -1470,6 +1470,7 @@ GameObject:
   - component: {fileID: 956765360}
   - component: {fileID: 956765359}
   - component: {fileID: 956765358}
+  - component: {fileID: 956765361}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -1493,7 +1494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -327, y: -237}
+  m_AnchoredPosition: {x: -300, y: -237}
   m_SizeDelta: {x: 261.1, y: 49.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &956765358
@@ -1581,6 +1582,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 956765356}
+--- !u!114 &956765361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 956765356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 494216044}
+          m_MethodName: QuitGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &964289491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,7 +1898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -324, y: 156}
+  m_AnchoredPosition: {x: -300, y: 156}
   m_SizeDelta: {x: 261.1, y: 49.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1072977500
@@ -2648,7 +2679,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -327, y: 97}
+  m_AnchoredPosition: {x: -300, y: 97}
   m_SizeDelta: {x: 261.1, y: 49.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1993280419
@@ -2830,7 +2861,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1072977498}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &2038692568
