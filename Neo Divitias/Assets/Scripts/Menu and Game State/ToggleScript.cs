@@ -43,6 +43,11 @@ public class ToggleScript : MonoBehaviour {
         toggle.colors = cb;
     }
 
+    public void autoOff()
+    {
+        toggle.isOn = false;
+    }
+
     public void makeGreen()
     {
         UnityEngine.UI.ColorBlock cb = toggle.colors;

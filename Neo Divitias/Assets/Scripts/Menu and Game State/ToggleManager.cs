@@ -53,8 +53,9 @@ public class ToggleManager : MonoBehaviour {
                 //Debug.Log(primary);
                 //Debug.Log(secondary);
                 ts.makeDark();
+                ts.autoOff();
 
-                // The bug with having to double click is because we only change the colout here. WE do not deselect the toggle
+                // (FIXED)The bug with having to double click is because we only change the colout here. WE do not deselect the toggle
             }
         }
     }
