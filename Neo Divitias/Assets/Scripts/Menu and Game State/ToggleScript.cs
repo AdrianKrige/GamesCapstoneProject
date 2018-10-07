@@ -13,21 +13,6 @@ public class ToggleScript : MonoBehaviour {
         toggle = GetComponent<UnityEngine.UI.Toggle>();
         toggle.onValueChanged.AddListener(OnToggleValueChanged);
 
-        //Toggle[] weapons = new Toggle[4];
-        //Debug.Log(gameObject.GetComponentsInChildren<Toggle>().Length);
-        //weapons[0] = gameObject.GetComponentsInChildren<Toggle>()[0];
-        //weapons[1] = gameObject.GetComponentsInChildren<Toggle>()[4];
-        //weapons[2] = gameObject.GetComponentsInChildren<Toggle>()[5];
-        //weapons[3] = gameObject.GetComponentsInChildren<Toggle>()[6];
-
-        ws = gameObject.GetComponentsInChildren<Toggle>();
-
-        //1(pistol) and 2(pistol)
-        // CLICK 4
-        //2(pistol) 4(smg)
-        // CLICK 4
-        //2(pistol) 4(pistol)
-
         Refresh();
     }
 
@@ -49,33 +34,80 @@ public class ToggleScript : MonoBehaviour {
         }
     }
 
-    private void OnToggleValueChanged(bool isOn){
+    public void makeDark()
+    {
         UnityEngine.UI.ColorBlock cb = toggle.colors;
-    
-        if (isOn){
-            cb.normalColor = Color.gray;
-            cb.highlightedColor = Color.gray;
-            if (gameObject.layer == 8)
-            {
-                deselectWeapon(1, gameObject.GetComponent<Toggle>().ToString().ToLower());
-            }
-            else if (gameObject.layer == 9)
-            {
-                deselectWeapon(2, gameObject.GetComponent<Toggle>().ToString().ToLower());
-            }
-        }
-        else{
-            // Change the toggle to selected. This should then call refresh to deactivate the oldest weapon.
-            cb.normalColor = Color.green;
-            cb.highlightedColor = Color.green;
-            if (gameObject.layer == 8){
-                selectWeapon(1, gameObject.GetComponent<Toggle>().ToString().ToLower());
-            }
-            else if (gameObject.layer == 9){
-                selectWeapon(2, gameObject.GetComponent<Toggle>().ToString().ToLower());
-            }
-        }
+        cb.normalColor = Color.gray;
+        cb.highlightedColor = Color.gray;
+
         toggle.colors = cb;
+    }
+
+    public void makeGreen()
+    {
+        UnityEngine.UI.ColorBlock cb = toggle.colors;
+
+        cb.normalColor = Color.green;
+        cb.highlightedColor = Color.green;
+
+        toggle.colors = cb;
+    }
+
+    private void OnToggleValueChanged(bool isOn){
+        if (transform.parent.name.Equals("Weapons"))
+        {
+            if (isOn)
+            {
+                if (gameObject.layer == 8)
+                {
+                    deselectWeapon(1, gameObject.GetComponent<Toggle>().ToString().ToLower());
+                }
+                else if (gameObject.layer == 9)
+                {
+                    deselectWeapon(2, gameObject.GetComponent<Toggle>().ToString().ToLower());
+                }
+                makeDark();
+            }
+            else
+            {
+                // Change the toggle to selected. This should then call refresh to deactivate the oldest weapon.
+                if (gameObject.layer == 8)
+                {
+                    selectWeapon(1, gameObject.GetComponent<Toggle>().ToString().ToLower());
+                }
+                else if (gameObject.layer == 9)
+                {
+                    selectWeapon(2, gameObject.GetComponent<Toggle>().ToString().ToLower());
+                }
+                makeGreen();
+            }
+        }
+        else
+        {
+            if (isOn)
+            {
+                if (gameObject.layer == 8)
+                {
+                    // Make another method for attributes(armour, dash, jump)
+                }
+                else if (gameObject.layer == 9)
+                {
+                    //
+                }
+                makeDark();
+            }
+            else
+            {
+                // Change the toggle to selected. This should then call refresh to deactivate the oldest weapon.
+                if (gameObject.layer == 8)
+                {
+                }
+                else if (gameObject.layer == 9)
+                {
+                }
+                makeGreen();
+            }
+        }
         GameState.player_one.weaponDebug();
     }
 
@@ -113,7 +145,8 @@ public class ToggleScript : MonoBehaviour {
         if (upgradeable){
             cost.text = string.Format("{0}", PlayerPrefs.GetInt(string.Format("{0}_{1}", item_name.ToLower(), current_level + 1)));
         }
-        else{
+        else
+        {
             cost.text = string.Format("MAX");
             upgrade.interactable = false;
             // Was a bug where if item became too expensive or max, it would become unclickable. However this would also mean you can select more things on controller.
@@ -125,6 +158,17 @@ public class ToggleScript : MonoBehaviour {
         if (!affordable){
             upgrade.interactable = false;
             toggle.Select();
+        }
+
+
+        if (current_level == 0)
+        {
+            //toggle.IsInteractable(false);
+            toggle.interactable = false;
+        }
+        else
+        {
+            toggle.interactable = true;
         }
 
         mText.text = string.Format("{0}", current_level);
