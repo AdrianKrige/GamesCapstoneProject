@@ -16,21 +16,55 @@ public class ToggleScript : MonoBehaviour {
         Refresh();
     }
 
-    private void selectWeapon(int player, string w){
-        if (player == 1){
-            GameState.player_one.selectWeapon(string.Format("{0}_{1}", player, w));
+    private void selectItem(int player, string w){
+        w = w.Split(' ')[0];
+        Debug.Log(w);
+        if (w.Equals("jump") || w.Equals("dash") || w.Equals("armour"))
+        {
+            if (player == 1)
+            {
+                GameState.player_one.selectMovement(string.Format("{0}_{1}", player, w));
+            }
+            else if (player == 2)
+            {
+                GameState.player_two.selectMovement(string.Format("{0}_{1}", player, w));
+            }
         }
-        else if (player == 2){
-            GameState.player_two.selectWeapon(string.Format("{0}_{1}", player, w));
+        else
+        {
+            if (player == 1)
+            {
+                GameState.player_one.selectWeapon(string.Format("{0}_{1}", player, w));
+            }
+            else if (player == 2)
+            {
+                GameState.player_two.selectWeapon(string.Format("{0}_{1}", player, w));
+            }
         }
     }
 
-    private void deselectWeapon(int player, string w){
-        if (player == 1){
-            GameState.player_one.deselectWeapon(string.Format("{0}_{1}", player, w));
+    private void deselectItem(int player, string w){
+        if (w.Equals("jump") || w.Equals("dash") || w.Equals("armour"))
+        {
+            if (player == 1)
+            {
+                GameState.player_one.deselectMovement();
+            }
+            else if (player == 2)
+            {
+                GameState.player_two.deselectMovement();
+            }
         }
-        else if (player == 2){
-            GameState.player_two.deselectWeapon(string.Format("{0}_{1}", player, w));
+        else
+        {
+            if (player == 1)
+            {
+                GameState.player_one.deselectWeapon(string.Format("{0}_{1}", player, w));
+            }
+            else if (player == 2)
+            {
+                GameState.player_two.deselectWeapon(string.Format("{0}_{1}", player, w));
+            }
         }
     }
 
@@ -45,7 +79,7 @@ public class ToggleScript : MonoBehaviour {
 
     public void autoOff()
     {
-        toggle.isOn = false;
+       toggle.isOn = false;
     }
 
     public void makeGreen()
@@ -59,17 +93,15 @@ public class ToggleScript : MonoBehaviour {
     }
 
     private void OnToggleValueChanged(bool isOn){
-        if (transform.parent.name.Equals("Weapons"))
-        {
             if (isOn)
             {
                 if (gameObject.layer == 8)
                 {
-                    deselectWeapon(1, gameObject.GetComponent<Toggle>().ToString().ToLower());
+                    deselectItem(1, gameObject.GetComponent<Toggle>().ToString().ToLower());
                 }
                 else if (gameObject.layer == 9)
                 {
-                    deselectWeapon(2, gameObject.GetComponent<Toggle>().ToString().ToLower());
+                    deselectItem(2, gameObject.GetComponent<Toggle>().ToString().ToLower());
                 }
                 makeDark();
             }
@@ -78,47 +110,20 @@ public class ToggleScript : MonoBehaviour {
                 // Change the toggle to selected. This should then call refresh to deactivate the oldest weapon.
                 if (gameObject.layer == 8)
                 {
-                    selectWeapon(1, gameObject.GetComponent<Toggle>().ToString().ToLower());
+                    selectItem(1, gameObject.GetComponent<Toggle>().ToString().ToLower());
                 }
                 else if (gameObject.layer == 9)
                 {
-                    selectWeapon(2, gameObject.GetComponent<Toggle>().ToString().ToLower());
+                    selectItem(2, gameObject.GetComponent<Toggle>().ToString().ToLower());
                 }
                 makeGreen();
             }
-        }
-        else
-        {
-            if (isOn)
-            {
-                if (gameObject.layer == 8)
-                {
-                    // Make another method for attributes(armour, dash, jump)
-                }
-                else if (gameObject.layer == 9)
-                {
-                    //
-                }
-                makeDark();
-            }
-            else
-            {
-                // Change the toggle to selected. This should then call refresh to deactivate the oldest weapon.
-                if (gameObject.layer == 8)
-                {
-                }
-                else if (gameObject.layer == 9)
-                {
-                }
-                makeGreen();
-            }
-        }
         GameState.player_one.weaponDebug();
     }
 
     public void Refresh(){
         TextMeshProUGUI mText = gameObject.GetComponentsInChildren<TextMeshProUGUI>()[0];
-        TextMeshProUGUI cash_left = transform.parent.parent.GetComponentsInChildren<TextMeshProUGUI>()[7];
+        TextMeshProUGUI cash_left = transform.parent.parent.GetComponentsInChildren<TextMeshProUGUI>()[11];
         Text cost = gameObject.GetComponentsInChildren<Text>()[0];
         Button upgrade = gameObject.GetComponentsInChildren<Button>()[0];
 
