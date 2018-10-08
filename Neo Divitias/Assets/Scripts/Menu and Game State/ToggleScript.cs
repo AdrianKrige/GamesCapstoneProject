@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 
 public class ToggleScript : MonoBehaviour {
-    private UnityEngine.UI.Toggle toggle;
+    private Toggle toggle;
     Toggle[] ws;
 
-    private void Start() { 
-        toggle = GetComponent<UnityEngine.UI.Toggle>();
+    private void Start() {
+        toggle = GetComponent<Toggle>();
         toggle.onValueChanged.AddListener(OnToggleValueChanged);
 
         Refresh();
@@ -72,7 +72,7 @@ public class ToggleScript : MonoBehaviour {
     {
         UnityEngine.UI.ColorBlock cb = toggle.colors;
         cb.normalColor = Color.gray;
-        cb.highlightedColor = Color.gray;
+        cb.highlightedColor = Color.yellow;
 
         toggle.colors = cb;
     }
@@ -84,10 +84,11 @@ public class ToggleScript : MonoBehaviour {
 
     public void makeGreen()
     {
+        toggle = GetComponent<Toggle>();
         UnityEngine.UI.ColorBlock cb = toggle.colors;
 
         cb.normalColor = Color.green;
-        cb.highlightedColor = Color.green;
+        cb.highlightedColor = Color.yellow;
 
         toggle.colors = cb;
     }
@@ -173,7 +174,6 @@ public class ToggleScript : MonoBehaviour {
 
         if (current_level == 0)
         {
-            //toggle.IsInteractable(false);
             toggle.interactable = false;
         }
         else

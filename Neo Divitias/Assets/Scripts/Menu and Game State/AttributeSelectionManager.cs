@@ -14,7 +14,6 @@ public class AttributeSelectionManager : MonoBehaviour
         ws = gameObject.GetComponentsInChildren<Toggle>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (gameObject.layer == 8)
@@ -32,10 +31,9 @@ public class AttributeSelectionManager : MonoBehaviour
 
             if (!string.Equals(t.name.ToLower(), movement))
             {
-               // Debug.Log("ATTR: " + t.name.ToLower() + " " + movement);
+                // Debug.Log("ATTR: " + t.name.ToLower() + " " + movement);
                 ts.makeDark();
                 ts.autoOff();
-
                 // (FIXED)The bug with having to double click is because we only change the colout here. WE do not deselect the toggle
             }
         }

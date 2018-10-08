@@ -12,6 +12,11 @@ public class WeaponSelectionManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         ws = gameObject.GetComponentsInChildren<Toggle>();
+        Toggle pistol = ws[0];
+        Debug.Log("Blah" + pistol.name);
+        ToggleScript tsp = pistol.GetComponent<ToggleScript>();
+        //tsp.makeDark();
+        tsp.makeGreen();
     }
 	
 	// Update is called once per frame
@@ -35,7 +40,6 @@ public class WeaponSelectionManager : MonoBehaviour {
             {
                 ts.makeDark();
                 ts.autoOff();
-
                 // (FIXED)The bug with having to double click is because we only change the colout here. WE do not deselect the toggle
             }
         }
