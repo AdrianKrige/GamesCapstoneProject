@@ -82,6 +82,11 @@ public class ToggleScript : MonoBehaviour {
        toggle.isOn = false;
     }
 
+    public void autoOn()
+    {
+        toggle.isOn = false;
+    }
+
     public void makeGreen()
     {
         toggle = GetComponent<Toggle>();

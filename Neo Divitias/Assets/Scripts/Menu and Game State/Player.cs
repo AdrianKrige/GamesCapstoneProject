@@ -24,7 +24,6 @@ public class Player
         Equipment.Add("jump", 1);
         Equipment.Add("dash", 0);
         Equipment.Add("armour", 0);
-        Equipment.Add("accuracy", 0);
         Equipment.Add("money", 150);
 
         this.primary = string.Format("{0}_pistol", name);

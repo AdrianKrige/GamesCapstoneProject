@@ -3882,7 +3882,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7a83960a7425105469238b50bd253764, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8b6695766234d564eb694a4d001ca81c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6295,7 +6295,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0c4141b266fc7a34c9392d52609fe7c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cca92fe8f8d6acd4aabb21b3329c8efb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13466,6 +13466,7 @@ GameObject:
   - component: {fileID: 1923376969}
   - component: {fileID: 1923376971}
   - component: {fileID: 1923376970}
+  - component: {fileID: 1923376972}
   m_Layer: 8
   m_Name: Armour
   m_TagString: armour
@@ -13550,6 +13551,17 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
+--- !u!114 &1923376972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1923376968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b946574d11dc64a8dd77d97c7eccd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1941030763
 GameObject:
   m_ObjectHideFlags: 0
