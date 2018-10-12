@@ -91,7 +91,8 @@ public class ToggleScript : MonoBehaviour {
 
     public void autoOn()
     {
-        toggle.isOn = false;
+        //Changed this
+        toggle.isOn = true;
     }
 
     public void makeGreen()

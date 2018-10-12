@@ -13,7 +13,6 @@ public class Player1Controller : PlayerController {
         body = GetComponent<Rigidbody>();
         forward = transform.forward;
         right = transform.right;
-        distToGround = GetComponent<Collider>().bounds.extents.y;
 	}
 	
 	void FixedUpdate () {
@@ -32,55 +31,11 @@ public class Player1Controller : PlayerController {
         right = currentCamera.transform.right;
         right.y = 0;
 
-        if (restrictVel && !playerHealth.isDead)
-        {
-            // Set velocity
-            if (Input.GetAxis("Vertical p1") > 0 || Input.GetAxis("Vertical mouse") > 0)
-            {
-                body.AddForce(forward * moveSpeedCurrent);
-            }
-            else if (Input.GetAxis("Vertical p1") < 0 || Input.GetAxis("Vertical mouse") < 0)
-            {
-                body.AddForce(-forward * moveSpeedCurrent);
-            }
-
-            if (Input.GetAxis("Horizontal p1") > 0 || Input.GetAxis("Horizontal mouse") > 0)
-            {
-                body.AddForce(right * moveSpeedCurrent);
-            }
-            else if (Input.GetAxis("Horizontal p1") < 0 || Input.GetAxis("Horizontal mouse") < 0)
-            {
-                body.AddForce(-right * moveSpeedCurrent);
-            }
-        }
-
-        // If not movement input
-        if ((Input.GetAxis("Horizontal p1") == 0 || Input.GetAxis("Horizontal mouse") == 0)
-            && (Input.GetAxis("Vertical p1") == 0 || Input.GetAxis("Vertical mouse") == 0) )
-        {
-            Vector3 reverse = -body.velocity;
-            reverse.y = 0;
-            body.AddForce(reverse * friction);
-        }
-
         // Clamp horizontal velocity
-
-        if (restrictVel)
-        {
-            float y = body.velocity.y;
-            body.velocity = new Vector3(body.velocity.x, 0, body.velocity.z);
-            body.velocity = Vector3.ClampMagnitude(body.velocity, maxVelocityCurrent);
-            body.velocity = new Vector3(body.velocity.x, y, body.velocity.z);
-        }
     }
 
     void Update()
     {
-        // Check for jumping
-        if ((Input.GetButtonDown("Jump p1") || Input.GetButtonDown("Jump")) && isGrounded() && !playerHealth.isDead)
-        {
-            body.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }
     }
 
     bool isGrounded ()

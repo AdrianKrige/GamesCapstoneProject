@@ -16,7 +16,7 @@ public class Player
     public Player(string name)
     {
         this.name = name;
-        this.money = 30;
+        this.money = 150;
         Equipment.Add("pistol", 1);
         Equipment.Add("shotgun", 0);
         Equipment.Add("smg", 0);
