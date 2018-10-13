@@ -29,6 +29,7 @@ public class UpgradeScript : MonoBehaviour {
             GameState.player_two.money -= cost_of_upgrade;
         }
         toggle.Select();
+        //Debug.Log(toggle.name);
         
         foreach (UnityEngine.UI.Toggle t in gameObject.GetComponentsInChildren <UnityEngine.UI.Toggle>())
         {
