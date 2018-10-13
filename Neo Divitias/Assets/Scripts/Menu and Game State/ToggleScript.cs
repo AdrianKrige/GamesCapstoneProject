@@ -130,47 +130,20 @@ public class ToggleScript : MonoBehaviour {
     }
 
     public void Refresh() {
-        TextMeshProUGUI mText = gameObject.GetComponentsInChildren<TextMeshProUGUI>()[0];
-        TextMeshProUGUI cash_left = transform.parent.parent.GetComponentsInChildren<TextMeshProUGUI>()[11];
-        Text cost = gameObject.GetComponentsInChildren<Text>()[0];
-        Button upgrade = gameObject.GetComponentsInChildren<Button>()[0];
-
         string item_name = gameObject.name;
         int current_level = 0;
-        int money = 0;
-        bool upgradeable = false;
-        bool affordable = false;
 
-        if (gameObject.layer == 8){
-            current_level = GameState.player_one.Equipment[item_name.ToLower()];
-            money = GameState.player_one.money;
-        }
-        else if (gameObject.layer == 9){
-            current_level = GameState.player_two.Equipment[item_name.ToLower()];
-            money = GameState.player_two.money;
-        }
-
-        // Check if weapon is at max level or not
-        int cost_of_upgrade = PlayerPrefs.GetInt(string.Format("{0}_{1}", item_name.ToLower(), current_level + 1));
-        if (cost_of_upgrade != 0){
-            upgradeable = true;
-            if (cost_of_upgrade <= money){
-                affordable = true;
-            }
-        }
-        
-        // Disable if max level and replace price with MAX
-        if (upgradeable){
-            cost.text = string.Format("{0}", PlayerPrefs.GetInt(string.Format("{0}_{1}", item_name.ToLower(), current_level + 1)));
-        }
-        else
+        int player = 1;
+        if (gameObject.layer == 9)
         {
-            cost.text = string.Format("MAX");
-            upgrade.interactable = false;
+            player = 2;
         }
-        
-        if (!affordable){
-            upgrade.interactable = false;
+
+        if (player == 1){
+            current_level = GameState.player_one.Equipment[item_name.ToLower()];
+        }
+        else if (player == 2){
+            current_level = GameState.player_two.Equipment[item_name.ToLower()];
         }
 
         if (current_level == 0)
@@ -180,14 +153,6 @@ public class ToggleScript : MonoBehaviour {
         else
         {
             toggle.interactable = true;
-        }
-        mText.text = string.Format("{0}", current_level);
-        cash_left.text = string.Format("$ {0}", money);
-
-        int player = 1;
-        if (gameObject.layer == 9)
-        {
-            player = 2;
         }
 
         Toggle[] toggles = gameObject.transform.parent.GetComponentsInChildren<Toggle>();
@@ -206,7 +171,7 @@ public class ToggleScript : MonoBehaviour {
             active.Add(GameState.player_two.primary);
             active.Add(GameState.player_two.secondary);
             active.Add(GameState.player_two.movement);
-            armour = GameState.player_one.Equipment["armour"];
+            armour = GameState.player_two.Equipment["armour"];
         }
 
         if (armour > 0)
