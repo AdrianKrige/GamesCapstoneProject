@@ -53,6 +53,14 @@ public class GameManager : MonoBehaviour {
             p1Money.SetText("$" + GameState.player_one.money);
             p2Money.SetText("$" + GameState.player_two.money);
         }
+        if (Input.GetButtonDown("Skip"))
+        {
+            if (SceneManager.GetActiveScene().name == "Tutorial")
+            {
+                StartCoroutine(changeLevel());
+
+            }
+        }
     }
 
     public void CollectObjective()
