@@ -1,19 +1,17 @@
-# GamesCapstoneProject
+# The Story
 
-UCT 3rd year games project. Done by
 
-* Michael White     - WHTMIC023
-* Daniel Munday     - MNDDAN004
-* Matthew Morris    - MRRMAT011
-* Adrian Krige      - KRGADR0004
+# Gameplay
+Neo Divitias 
 
-##
+# Controls
+Neo Divitias is designed to be played with two Xbox 360 controllers.
 
-## Resources
+![This should be an image of the controllers.](Neo Divitias/Assets/Images/xbox-controller.png)
 
-Google drive
-`https://drive.google.com/drive/folders/11-c0__hoppwN_L1muDD_Jqyqqzdl26ps?usp=sharing`
+# Team
 
-## TODO
-
-https://docs.google.com/spreadsheets/d/1UE9bp8McFt9zG9cRewLLtZmNYBiLGyMYjKgjm8lZy0I/edit#gid=0
+* Michael White     &nbsp;&nbsp;  - WHTMIC023
+* Daniel Munday     &nbsp;&nbsp;  - MNDDAN004
+* Matthew Morris    &nbsp;        - MRRMAT011
+* Adrian Krige      &nbsp;&nbsp;&nbsp;  - KRGADR004
