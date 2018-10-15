@@ -1,6 +1,7 @@
 ![This should be an image of the temple from cutscene.](Website/temple.png)
 
 # The Story
+The world's first sentient AI has left behind a virtual world, known as The Temple. After many trials, you have managed to access this world, and must fight your way through to unlock whatever secrets The Temple holds.
 
 ![This should be an image of gameplay.](Website/gameplay.png)
 
