@@ -13,7 +13,7 @@ Neo Divitias is designed to be played with two Xbox 360 controllers.
 
 ## Team
 
-* Michael White     &nbsp;- WHTMIC023
-* Daniel Munday     &nbsp;- MNDDAN004
-* Matthew Morris    - MRRMAT011
-* Adrian Krige      &nbsp;- KRGADR0004
+* Michael White     &nbsp;        - WHTMIC023
+* Daniel Munday     &nbsp;        - MNDDAN004
+* Matthew Morris                  - MRRMAT011
+* Adrian Krige      &nbsp;&nbsp;  - KRGADR0004
