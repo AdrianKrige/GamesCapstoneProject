@@ -10,6 +10,8 @@ Neo Divitias is a two-player platformer-shooter in which players must co-operate
 
 ![This should be an embedded video of gameplay.](Website/gameplay.mp4)
 
+<iframe width="480" height="360" src="Website/gameplay.mp4" frameborder="0"> </iframe>
+
 # Controls
 Neo Divitias is designed to be played with two Xbox 360 controllers.
 
