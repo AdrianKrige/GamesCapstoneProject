@@ -6,11 +6,9 @@ The world's first sentient AI has left behind a virtual world, known as The Temp
 # Gameplay
 Neo Divitias is a two-player platformer-shooter in which players must co-operate in order to advance through various levels. Players gather energy from destroyed enemies and collected objectives, which can be used to purchase powerful equipment from an arsenal of four weapons, two movement abilities and a health upgrade. At the end of the game, players are turned against each other and must face off in a first-to-three duel, gaining points for either capturing the objective zone or killing the other player.
 
-<iframe width="1280" height="720" src="Assets/gameplay.mp4" frameborder="0"> </iframe>
+<iframe width="640" height="360" src="Assets/gameplay.mp4" frameborder="0"> </iframe>
 
-<iframe width="1280" height="720" src="Assets/gameplay2.mp4" frameborder="0"> </iframe>
-
-<iframe width="1280" height="720" src="Assets/gameplay3.mp4" frameborder="0"> </iframe>
+<iframe width="640" height="360 src="Assets/gameplay2.mp4" frameborder="0"> </iframe>
 
 # Controls
 Neo Divitias is designed to be played with two Xbox 360 controllers.
